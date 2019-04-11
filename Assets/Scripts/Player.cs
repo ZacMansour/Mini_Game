@@ -22,9 +22,6 @@ public class Player : MonoBehaviour
         float moveVertical = (Input.GetAxis("Vertical"));
 
         transform.Translate(new Vector3(moveHorizontal, 0.0f, moveVertical) * speed);
-
-        //Jump
-
     }
 
     private void OnTriggerEnter(Collider other)
