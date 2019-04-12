@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 4512184648116033260}
   - component: {fileID: 1662240177846256622}
   - component: {fileID: 5277292065110868177}
+  - component: {fileID: 731637372116311505}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -185,3 +186,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &731637372116311505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595003177306452947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bca6bf0ed732f44b355386dfb9cef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
