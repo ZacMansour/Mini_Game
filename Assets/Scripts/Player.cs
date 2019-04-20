@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
 
     public int health = 100;
+    public float healthSpeed = 0.5f;
     public float speed = 0.05f;
 
     // Update is called once per frame
@@ -16,25 +17,29 @@ public class Player : MonoBehaviour
 
         transform.Translate(new Vector3(moveHorizontal, 0.0f, moveVertical) * speed);
 
-        if(health < 100)
+        if (health <= 1)
         {
             Destroy(gameObject);
+            //Instantiate(gameObject, GameObject.Find("RespawnPoint").transform.position, Quaternion.identity);
         }
-
-
     }
 
-    private void OnTriggerEnter(Collider drown)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Entered Danger Zone");
         //Display text saying "Danger"
     }
 
-    private void OnTriggerStay(Collider drown)
+    //decrease health in poison zone
+    //slow down
+    private void OnTriggerStay(Collider other)
     {
         Debug.Log("Losing Health");
 
-        //decrease health in poison zone
+        if (gameObject.tag == "Player")
+        {
+            health -= 1;
+        }
     }
 
     private void OnTriggerExit(Collider other)
