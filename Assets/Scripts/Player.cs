@@ -24,15 +24,31 @@ public class Player : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider drown)
     {
-        Debug.Log("Entered Poison");
+        Debug.Log("Entered Danger Zone");
         //Display text saying "Danger"
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider drown)
     {
-        health -= 1;
         Debug.Log("Losing Health");
+
+        //decrease health in poison zone
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Left the Danger Zone");
+    }
+
+    //destroys player when touching death pad
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.tag == "Death")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

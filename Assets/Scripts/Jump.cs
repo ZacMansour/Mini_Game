@@ -20,7 +20,7 @@ public class Jump : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
