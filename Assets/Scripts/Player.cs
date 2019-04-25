@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
 
     public int health = 100;
-    public float healthSpeed = 0.5f;
     public float speed = 0.05f;
 
     // Update is called once per frame

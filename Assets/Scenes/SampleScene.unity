@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2132,7 +2132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  healthSpeed: 0.5
   speed: 0.05
 --- !u!114 &1157986153
 MonoBehaviour:
@@ -3914,7 +3913,7 @@ PrefabInstance:
     - target: {fileID: 3074298880794409121, guid: ef31a452beb986f468f11fac6d3bb0b6,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074298880794409125, guid: ef31a452beb986f468f11fac6d3bb0b6,
         type: 3}
@@ -4431,7 +4430,7 @@ PrefabInstance:
     - target: {fileID: 4663508600289075797, guid: 062b9011dace9264baff89f607d5c5e0,
         type: 3}
       propertyPath: m_Name
-      value: Shooter
+      value: Roamer
       objectReference: {fileID: 0}
     - target: {fileID: 1712964552281246159, guid: 062b9011dace9264baff89f607d5c5e0,
         type: 3}
@@ -4653,7 +4652,7 @@ PrefabInstance:
     - target: {fileID: 551807555994830420, guid: 81188c312ba7aaf42bfd6f870f12ebde,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337072233772244836, guid: 81188c312ba7aaf42bfd6f870f12ebde,
         type: 3}
