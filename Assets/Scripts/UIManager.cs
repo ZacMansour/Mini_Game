@@ -23,8 +23,6 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && pausePanel != null)
         {
-            //Equals to what pause is not (the opposite)
-            //Toggles the bool and sets canvas appropriately
             isPaused = !isPaused;
             pausePanel.SetActive(isPaused);
         }
