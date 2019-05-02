@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health = 50;
+    public int startingHealth = 50;
+    public int currentHealth;
 
-    // Start is called before the first frame update
-    void Start()
+    bool isDead;
+
+    private void Awake()
     {
-        
+        currentHealth = startingHealth;
+    }
+
+    public void TakeDamage (int amount, Vector3 hitPoint)
+    {
+        if (isDead)
+        {
+            return;
+        }
+
+
     }
 
     // Update is called once per frame
