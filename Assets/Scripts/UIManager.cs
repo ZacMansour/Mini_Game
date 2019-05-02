@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && pausePanel != null)
+        if (Input.GetKeyDown(KeyCode.P) && pausePanel != null)
         {
             isPaused = !isPaused;
             pausePanel.SetActive(isPaused);
