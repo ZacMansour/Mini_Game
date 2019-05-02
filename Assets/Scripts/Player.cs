@@ -55,4 +55,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.gameObject.tag == "HP")
+        {
+            Destroy(hit.gameObject);
+            health += 10;
+        }
+
+        if(hit.gameObject.tag == "HP+")
+        {
+            Destroy(hit.gameObject);
+            health += 20;
+        }
+    }
+
 }

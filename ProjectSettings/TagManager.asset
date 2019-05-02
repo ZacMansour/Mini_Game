@@ -9,6 +9,8 @@ TagManager:
   - Boss
   - Death
   - Bullet
+  - HP
+  - HP+
   layers:
   - Default
   - TransparentFX
