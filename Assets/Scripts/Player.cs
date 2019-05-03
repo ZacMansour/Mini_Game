@@ -27,6 +27,18 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Entered Danger Zone");
         //Display text saying "Danger"
+
+        if (other.gameObject.CompareTag("HP"))
+        {
+            other.gameObject.SetActive(false);
+            health += 10;
+        }
+
+        if (other.gameObject.CompareTag("HP+"))
+        {
+            other.gameObject.SetActive(false);
+            health += 20;
+        }
     }
 
     //decrease health in poison zone
@@ -55,7 +67,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    /*private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.gameObject.tag == "HP")
         {
@@ -68,6 +80,5 @@ public class Player : MonoBehaviour
             Destroy(hit.gameObject);
             health += 20;
         }
-    }
-
+    }*/
 }
