@@ -7,6 +7,7 @@ public class EnemyBoss : MonoBehaviour
     public int startingHealth = 100;
     public int currentHealth;
     public float sinkSpeed = 2.5f;
+    public GameObject Bullet;
 
     CapsuleCollider capsuleCollider;
     bool isDead;
@@ -30,10 +31,24 @@ public class EnemyBoss : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int amount, Vector3 hitPoint)
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.tag == "Bullet")
+        {
+            currentHealth -= 10;
+            Destroy(Bullet);
+        }
+
+        if (currentHealth <= 0)
+        {
+            StartSinking();
+        }
+    }
+
+    /*public void TakeDamage(int amount, Vector3 hitPoint)
     {
         /*If the enemy is dead there is no need to take damage
-        so exit the function*/
+        so exit the function
         if (isDead)
         {
             return;
@@ -45,15 +60,15 @@ public class EnemyBoss : MonoBehaviour
         {
             Death();
         }
-    }
+    }*/
 
-    void Death()
+    /*void Death()
     {
         isDead = true;
 
-        //Turn the collider into a trigger so bullets can pass through
+        Turn the collider into a trigger so bullets can pass through
         capsuleCollider.isTrigger = true;
-    }
+    }*/
 
     public void StartSinking()
     {

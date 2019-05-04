@@ -3208,6 +3208,7 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   sinkSpeed: 2.5
+  Bullet: {fileID: 0}
 --- !u!54 &1441235387
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4798,6 +4799,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roamer
       objectReference: {fileID: 0}
+    - target: {fileID: 4663508600289075797, guid: 062b9011dace9264baff89f607d5c5e0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Roamer
+      objectReference: {fileID: 0}
     - target: {fileID: 1712964552281246159, guid: 062b9011dace9264baff89f607d5c5e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4886,6 +4892,7 @@ MonoBehaviour:
   startingHealth: 50
   currentHealth: 0
   sinkSpeed: 2.5
+  Bullet: {fileID: 0}
 --- !u!95 &4395198759127182603
 Animator:
   serializedVersion: 3
@@ -5021,6 +5028,7 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   sinkSpeed: 2.5
+  Bullet: {fileID: 0}
 --- !u!54 &4893849863141480174
 Rigidbody:
   m_ObjectHideFlags: 0

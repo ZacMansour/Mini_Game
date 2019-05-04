@@ -65,6 +65,16 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collision.collider.gameObject.tag == "Roamer")
+        {
+            health -= 5;
+        }
+
+        if (collision.collider.gameObject.tag == "Boss")
+        {
+            health -= 10;
+        }
     }
 
     /*private void OnControllerColliderHit(ControllerColliderHit hit)

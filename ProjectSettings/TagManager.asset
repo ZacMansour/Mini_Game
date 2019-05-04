@@ -5,12 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Shooter
   - Boss
   - Death
   - Bullet
   - HP
   - HP+
+  - Roamer
   layers:
   - Default
   - TransparentFX
