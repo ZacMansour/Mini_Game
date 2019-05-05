@@ -18,6 +18,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        //Makes sure camera does not roll with ball
         transform.position = player.transform.position + offset;
     }
 

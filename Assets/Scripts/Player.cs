@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
         transform.Translate(new Vector3(moveHorizontal, 0.0f, moveVertical) * speed);
 
+        //When player runs out of health, destroy it and reload scene
         if (health <= 1)
         {
             Destroy(gameObject);
@@ -38,11 +39,13 @@ public class Player : MonoBehaviour
             Application.LoadLevel(Application.loadedLevel);
         }
 
+        //Max health is 100
         if (health >= 100)
         {
             health = 100;
         }
 
+        //Connects healthslider value to player health
         healthSlider.value = health;
 
         /*if (damaged)
@@ -59,15 +62,16 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered Danger Zone");
-        //Display text saying "Danger"
+        //Debug.Log("Entered Danger Zone");
 
+        //Small heart gives player 10 HP
         if (other.gameObject.CompareTag("HP"))
         {
             other.gameObject.SetActive(false);
             health += 10;
         }
 
+        //Large heart gives player 20 health
         if (other.gameObject.CompareTag("HP+"))
         {
             other.gameObject.SetActive(false);
@@ -79,8 +83,9 @@ public class Player : MonoBehaviour
     //slow down
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Losing Health");
+        //Debug.Log("Losing Health");
 
+        //Player loses health in poison zone
         if (gameObject.tag == "Player")
         {
             health -= 1;
@@ -89,38 +94,46 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Left the Danger Zone");
+        //Debug.Log("Left the Danger Zone");
     }
 
     //destroys player when touching death pad
     private void OnCollisionEnter(Collision collision)
     {
+        //Destroys player upon contact
         if (collision.collider.gameObject.tag == "Death")
         {
             Destroy(gameObject);
             Application.LoadLevel(Application.loadedLevel);
         }
 
+        //Enemy deals 5 damage when touching
         if (collision.collider.gameObject.tag == "Roamer")
         {
             health -= 5;
+            //Screens tints red when damaged
             damageImage.color = flashColour;
         }
         else
         {
+            //Colour returns to clear
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
 
+        //Boss deals 10 damage when touching
         if (collision.collider.gameObject.tag == "Boss")
         {
             health -= 10;
+            //Screens tints red when damaged
             damageImage.color = flashColour;
         }
         else
         {
+            //Colour returns to clear
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
 
+        //When the player reaches the end, YOU WIN!!! text will appear
         if (collision.collider.gameObject.tag == "Finish")
         {
             winText.text = "YOU WIN!!!";

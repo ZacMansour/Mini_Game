@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Enemy sinks when it dies
         if (currentHealth <= 0)
         {
             StartSinking();
@@ -38,6 +39,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //GameObject that is tagged Bullet does 10 damage
         if (collision.collider.gameObject.tag == "Bullet")
         {
             currentHealth -= 10;
@@ -70,6 +72,7 @@ public class Enemy : MonoBehaviour
         capsuleCollider.isTrigger = true;
     }*/
 
+    //Makes enemy sink
     public void StartSinking()
     {
         //Find the rigidbody component and make it kinematic

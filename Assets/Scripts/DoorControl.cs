@@ -14,6 +14,7 @@ public class DoorControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //GameObject that is tagged Bullet opens the door
         if (other.gameObject.CompareTag("Bullet"))
         {
             anim.SetTrigger("DoorOpen");

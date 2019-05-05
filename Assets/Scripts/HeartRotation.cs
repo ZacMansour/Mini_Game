@@ -10,6 +10,7 @@ public class HeartRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Rotates the heart
         transform.Rotate(Vector3.up, speed * Time.deltaTime);
     }
 }

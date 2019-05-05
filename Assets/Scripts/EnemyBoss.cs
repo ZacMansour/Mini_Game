@@ -33,12 +33,14 @@ public class EnemyBoss : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //GameObject that is tagged Bullet does 10 damage
         if (collision.collider.gameObject.tag == "Bullet")
         {
             currentHealth -= 10;
             Destroy(Bullet);
         }
 
+        //Enemy sinks when it dies
         if (currentHealth <= 0)
         {
             StartSinking();
@@ -70,6 +72,7 @@ public class EnemyBoss : MonoBehaviour
         capsuleCollider.isTrigger = true;
     }*/
 
+    //Makes enemy sink
     public void StartSinking()
     {
         //Find the rigidbody component and make it kinematic
