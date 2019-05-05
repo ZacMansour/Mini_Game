@@ -12,7 +12,7 @@ public class DoorControl : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         //GameObject that is tagged Bullet opens the door
         if (other.gameObject.CompareTag("Bullet"))

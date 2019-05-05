@@ -19,11 +19,11 @@ EditorBuildSettings:
     guid: 7aea90ebed0c72342b1d0c26c582763c
   - enabled: 0
     path: 
-    guid: 3606d8f209b5e1447b08e430e372fa6f
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MouseScreen.unity
     guid: 57100dc23d4049e42a0aa2f9519c4594
-  - enabled: 1
-    path: Assets/Scenes/Pause.unity
-    guid: a03c05a9ba39dc449856547af8e7d778
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
