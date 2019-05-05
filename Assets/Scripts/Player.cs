@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
 
     public int health = 100;
     public float speed = 0.05f;
+    public Text winText;
     public Slider healthSlider;
     public Image damageImage;
     public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.2f);
 
     bool damaged;
+
+    private void Start()
+    {
+        winText.text = "";
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +35,7 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             //Instantiate(gameObject, GameObject.Find("RespawnPoint").transform.position, Quaternion.identity);
+            Application.LoadLevel(Application.loadedLevel);
         }
 
         if (health >= 100)
@@ -89,6 +98,7 @@ public class Player : MonoBehaviour
         if (collision.collider.gameObject.tag == "Death")
         {
             Destroy(gameObject);
+            Application.LoadLevel(Application.loadedLevel);
         }
 
         if (collision.collider.gameObject.tag == "Roamer")
@@ -109,6 +119,11 @@ public class Player : MonoBehaviour
         else
         {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+
+        if (collision.collider.gameObject.tag == "Finish")
+        {
+            winText.text = "YOU WIN!!!";
         }
     }
 

@@ -11,6 +11,7 @@ TagManager:
   - HP
   - HP+
   - Roamer
+  - Shooter
   layers:
   - Default
   - TransparentFX
