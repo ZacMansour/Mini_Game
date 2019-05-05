@@ -24,6 +24,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentHealth <= 0)
+        {
+            StartSinking();
+        }
+
         //This is how fast the enemy will sink
         if (isSinking)
         {
@@ -37,11 +42,6 @@ public class Enemy : MonoBehaviour
         {
             currentHealth -= 10;
             Destroy(Bullet);
-        }
-
-        if (currentHealth <= 0)
-        {
-            StartSinking();
         }
     }
 

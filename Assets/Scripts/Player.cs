@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,6 +8,12 @@ public class Player : MonoBehaviour
 
     public int health = 100;
     public float speed = 0.05f;
+    public Slider healthSlider;
+    public Image damageImage;
+    public float flashSpeed = 5f;
+    public Color flashColour = new Color(1f, 0f, 0f, 0.2f);
+
+    bool damaged;
 
     // Update is called once per frame
     void Update()
@@ -21,6 +28,24 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             //Instantiate(gameObject, GameObject.Find("RespawnPoint").transform.position, Quaternion.identity);
         }
+
+        if (health >= 100)
+        {
+            health = 100;
+        }
+
+        healthSlider.value = health;
+
+        /*if (damaged)
+        {
+            damageImage.color = flashColour;
+        }
+        else
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+
+        damaged = false;*/
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,11 +94,21 @@ public class Player : MonoBehaviour
         if (collision.collider.gameObject.tag == "Roamer")
         {
             health -= 5;
+            damageImage.color = flashColour;
+        }
+        else
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
 
         if (collision.collider.gameObject.tag == "Boss")
         {
             health -= 10;
+            damageImage.color = flashColour;
+        }
+        else
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
     }
 
